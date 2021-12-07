@@ -1,0 +1,47 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100px;
+  // background-color: #f3f3f3;
+  // background-color: #ff0000;
+  // background-image: url('/public/img/logo/512-512.png') no-repeat center;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-size: 0.14rem;
+}
+
+// 美化滚动条
+::-webkit-scrollbar {
+  width: .08rem;
+  height: .08rem;
+}
+
+::-webkit-scrollbar-track {
+  width: 0.06rem;
+  background: rgba(#505050, 0.1);
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(41, 41, 41, 0.5);
+  background-clip: padding-box;
+  min-height: .28rem;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  transition: background-color .3s;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(144,147,153,.3);
+}

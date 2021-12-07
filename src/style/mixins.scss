@@ -1,0 +1,16 @@
+@import '@/style/viriables.scss';
+
+@mixin baseBroder {
+  background-color: #ffffff;
+  border:0.008rem  solid $border-color;
+  // border-radius: 0.05rem;
+  padding:.16rem;
+  color:$content-fontcolor;
+}
+
+// 移除隐藏且显示... 
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
