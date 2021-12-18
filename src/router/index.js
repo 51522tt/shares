@@ -1,42 +1,29 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-// const store = useStore()
-// BasiceLout.vue
-const basiceLayout = ()=>import('@/layout/BasicLayout.vue')
-const worksplace = ()=>import('@/views/Worksplace.vue')
-// dashboard 
-const dashboard = ()=>import('@/views/dashboard/index.vue')
-const system = ()=>import('@/views/system/index.vue')
-const auxiliary = ()=>import('@/views/auxiliary/index.vue')
-const tools = ()=>import('@/views/tools/index.vue')
+const BasicLayoutLayout = ()=>import('@/layout/BasicLayout.vue')
+const Defualt = ()=>import('@/views/Defualt.vue')
+const DataSet = ()=>import('@/views/DataSet.vue')
+const DataSetManager = ()=>import('@/views/DataSetManager.vue')
 
 const routes = [
   {
     path: '/',
-    name: 'index',
-    redirect:'/worksplace',
-    component:basiceLayout,
+    name: 'base',
+    redirect:'/index',
+    component:BasicLayoutLayout,
     children:[
       {
-        path:'worksplace',
-        component:worksplace,
+        path:'index',
+        component:Defualt
       },
       {
-        path:'dashboard',
-        component:dashboard,
+        path:'dataset',
+        component:DataSet
       },
       {
-        path:'system',
-        component:system,
-      },
-      {
-        path:'auxiliary',
-        component:auxiliary,
-      },
-      {
-        path:'tools',
-        component:tools,
-      },
+        path:'datasetmanager',
+        component:DataSetManager
+      }
     ]
   },
  

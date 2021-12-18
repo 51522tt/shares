@@ -12,12 +12,18 @@
         :key="meun"
       >
         <template #trigger>
-          <n-button
+          <!-- <n-button
             quaternary
+            ghost
             class="iconfont side__meun__iconfont"
             v-html="meun.icon"
             @click="router.push(meun)"
-          ></n-button>
+          ></n-button> -->
+           <div
+            class="iconfont side__meun__iconfont"
+            v-html="meun.icon"
+            @click="router.push(meun)"
+          ></div>
         </template>
         <span>{{ meun.title }}</span>
       </n-tooltip>
@@ -45,11 +51,12 @@ const meuns = store.state.meuns
 @import '@/style/mixins.scss';
 
 .side {
-  @include baseBroder;
+  // @include baseBroder;
   height: 100%;
   display: flex;
   flex-direction: column;
   padding:0.06rem 0 .1rem 0;
+  width: .5rem;
   &__logo {
     display: flex;
     &__icon {
@@ -64,6 +71,12 @@ const meuns = store.state.meuns
     &__iconfont {
       font-size: 0.23rem;
       margin: 0.02rem 0;
+      color:#b1b2b5;
+      text-align: center;
+    }
+     &__iconfont:hover {
+      color:#ffffff;
+      cursor:pointer;
     }
   }
   &__user {

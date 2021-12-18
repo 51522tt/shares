@@ -1,23 +1,29 @@
 {
-  "name": "ysoffice",
-  "version": "0.0.0",
+  "name": "shares",
+  "version": "1.0.0",
+  "main": "main.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "start": "wait-on tcp:3000 && electron .",
+    "electron:server": "concurrently -k \"npm run dev\" \"npm start\""
   },
   "dependencies": {
     "axios": "^0.24.0",
     "axois": "0.0.1-security",
+    "concurrently": "^6.5.0",
     "naive-ui": "^2.21.1",
     "normalize.css": "^8.0.1",
     "sass": "^1.43.5",
     "sass-loader": "^12.3.0",
     "vue": "^3.2.16",
     "vue-router": "^4.0.12",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "wait-on": "^6.0.0"
   },
   "devDependencies": {
+    "@vicons/ionicons5": "^0.11.0",
     "@vitejs/plugin-vue": "^1.9.3",
     "vite": "^2.6.4"
   }
