@@ -1,8 +1,5 @@
 <template>
   <div class="side">
-    <div class="side__logo">
-      <img class="side__logo__icon" src="/img/logo/32-32.png" alt="" />
-    </div>
     <div class="side__meun">
       <n-tooltip
         placement="right"
@@ -65,7 +62,6 @@ const meuns = store.state.meuns
   }
   &__meun {
     flex: 1;
-    padding-top: 1rem;
     display: flex;
     flex-direction: column;
     &__iconfont {

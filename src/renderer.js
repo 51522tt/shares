@@ -2,15 +2,15 @@ const { ipcRenderer } = require('electron')
 const xlsx = require('node-xlsx');
 const fs = require('fs')
 import * as excelDB from './db/excelDB'
-window['ipcRenderer']=ipcRenderer
+window['ipcRenderer'] = ipcRenderer
 
-ipcRenderer.on('reply',(event,arg)=>{
+ipcRenderer.on('reply', (event, arg) => {
   console.log('reply', arg)
   arg.forEach(filePath => {
     // Mac os
-    // const fileName = filePath.split('/').pop()
+    const fileName = filePath.split('/').pop()
     // Win os
-    const fileName = filePath.split('\\').pop()
+    // const fileName = filePath.split('\\').pop()
     console.log(`filePath：${filePath}`,)
     console.log(`fileName: ${fileName}`,)
     var dataTime = handleFileName(fileName)
@@ -26,8 +26,8 @@ ipcRenderer.on('reply',(event,arg)=>{
         excelObj['file_name'] = fileName
         excelObj['code'] = getExecStrs(excelObj['识别码'], /[0-9]{6}/g)
         excelObj['date'] = dataTime
-        excelObj['R'] = excelObj['总市值'] / excelObj['股东数'],
-          excelObj['Y'] = excelObj['流通'] / excelObj['股东数'],
+        excelObj['R'] = excelObj['总市值'] / excelObj['股东数']
+          excelObj['Y'] = excelObj['流通'] / excelObj['股东数']
           excelObj['tag'] = handleTag(excelObj['code'])
         excelObjArr.push(excelObj)
       })

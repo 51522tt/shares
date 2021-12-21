@@ -1,18 +1,22 @@
 {
   "name": "shares",
   "version": "1.0.0",
-  "main": "main.js",
+  "author": "fym",
+  "description": "this a app",
+  "main": "electron/main.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
     "start": "wait-on tcp:3000 && electron .",
-    "electron:server": "concurrently -k \"npm run dev\" \"npm start\""
+    "electron:server": "concurrently -k \"npm run dev\" \"npm start\"",
+    "electron:build": "vite build && electron-builder"
   },
   "dependencies": {
     "axios": "^0.24.0",
     "axois": "0.0.1-security",
     "concurrently": "^6.5.0",
+    "cross-env": "^7.0.3",
     "naive-ui": "^2.21.1",
     "normalize.css": "^8.0.1",
     "sass": "^1.43.5",
@@ -23,12 +27,34 @@
     "wait-on": "^6.0.0"
   },
   "devDependencies": {
+    "electron": "^16.0.5",
+    "electron-builder": "^22.14.5",
     "@types/node": "^17.0.2",
     "@vicons/ionicons5": "^0.11.0",
     "@vitejs/plugin-vue": "^1.9.3",
     "@vue/cli-plugin-typescript": "^4.5.15",
     "echarts": "^5.2.2",
     "node-xlsx": "^0.17.2",
-    "vite": "^2.6.4"
+    "vite": "^2.6.14"
+  },
+  "build": {
+    "appId": "icu.fym",
+    "productName": "企业数据分析",
+    "copyright": "Copyright © 2021 fym",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist_electron"
+    }
   }
 }
