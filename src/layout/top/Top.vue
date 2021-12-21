@@ -1,24 +1,33 @@
 <template>
-  <div class='top'>
-    <span class='top__online iconfont top__online--unonline'>&#xe73f;</span>
+  <div class='top' >
+    <CloseOutline class='top__close iconfont' @click='handleClose'></CloseOutline>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { CloseOutline } from '@vicons/ionicons5'
+const handleClose = ()=>{
+  console.log('close')
+  window.ipcRenderer.send('window-all-closed')
+}
 </script>
 
 <style lang='scss' scoped>
 @import '@/style/mixins.scss';
 .top{
+  -webkit-app-region: drag;
   display: flex;
   flex-direction: row-reverse;
-  padding: .01rem;
-  &__online{
-    margin: 0 0.04rem;
-    &--unonline{
-      color:red
-    }
+  &__close{
+    -webkit-app-region: no-drag;
+    margin: auto 0;
+    color:#ffffff;
+    height:100%;
+    width: .4rem;
+    font-size: .1rem;
+  }
+  &__close:hover{
+     background-color: #e03636;
   }
 
 }

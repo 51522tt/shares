@@ -1,34 +1,55 @@
 <template>
   <div class='dataset' >
     <div class='dataset__list'>
-      <div class='dataset__list__dataset'>
-        <div class='dataset__list__dataset__title'>
-          数据集
-        </div>
-        <div class='dataset__list__dataset__listing'>
-          <div class='dataset__list__dataset__listing__item'>默认数据集（All）</div>
-          <div class='dataset__list__dataset__listing__item'>1</div>
-          <div class='dataset__list__dataset__listing__item'>1</div>
-          <div class='dataset__list__dataset__listing__item'>1</div>
-        </div>
-      </div>
-      <div class='dataset__list__source'>
-         <div class='dataset__list__dataset__title'>
-          数据源
-        </div>
-        <div class='dataset__list__dataset__listing'>
-          <div class='dataset__list__dataset__listing__item'>104.1数据.xlsx</div>
-          <div class='dataset__list__dataset__listing__item'>1</div>
-          <div class='dataset__list__dataset__listing__item'>1</div>
-          <div class='dataset__list__dataset__listing__item'>1</div>
+
+      <div class="dataset__list__dataset">
+        <div class="dataset__list__dataset__title">数据集</div>
+        <div class="dataset__list__dataset__listing">
+          <div
+            class="dataset__list__dataset__listing__item"
+            @click="handleData"
+          >
+            默认数据集（All）
+          </div>
         </div>
       </div>
+      
     </div>
-    <div class='dataset__content'>123</div>
+          <div class='dataset__list__source'>
+        <div class='dataset__list__dataset__title'>
+          需求列表
+        </div>
+        <div class='dataset__list__dataset__listing'>
+          <div class='dataset__list__dataset__listing__item' @click='router.push("/dataset/xq1")'>
+          R、Y 每日变化 
+          </div>
+          <div class='dataset__list__dataset__listing__item' @click='router.push("/dataset/xq2")'>
+          标签(R)每日平均值
+          </div>
+          <div class='dataset__list__dataset__listing__item' @click='router.push("/dataset/xq3")'>
+          标签(Y)每日平均值
+          </div>
+          <div class='dataset__list__dataset__listing__item' @click='router.push("/dataset/xq4")'>
+          S区间(R)每日平均值
+          </div>
+          <div class='dataset__list__dataset__listing__item' @click='router.push("/dataset/xq5")'>
+          S区间(Y)每日平均值
+          </div>
+          <div class='dataset__list__dataset__listing__item' @click='router.push("/dataset/xq6")'>
+          R、Y 趋势查询
+          </div>
+        </div>
+      </div>
+    <div class='dataset__content'>
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
 
 </script>
 
@@ -38,7 +59,9 @@
   display: flex;
   height: 100%;
   &__list{
-    max-width: 1.8rem;
+     border-right: 1px solid #303030;
+    max-width: 1.5rem;
+    min-width: 1.5rem;
     flex: auto;
     background-color: #383838;
     display: flex;
@@ -62,7 +85,7 @@
       }
     }
     &__source{
-      flex: 1;
+      min-width: 1.8rem;
       border-bottom:.01rem solid #202020 ;
     }
   }

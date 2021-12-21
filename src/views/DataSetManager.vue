@@ -23,11 +23,11 @@
       </div>
     </div>
     <div class="datasetmanager__content">
-      <div class='tips'> 
-        新增数据集
-      </div>
+      <div class="tips">新增数据集</div>
       <div class="datasetmanager__content__box">
-        <n-button id='uploaded' class="btn" type="primary" @click='handleClick'>从本地上传</n-button>
+        <n-button id="uploaded" class="btn" type="primary" @click="handleClick"
+          >从本地上传</n-button
+        >
         <n-button class="btn" type="primary">从已上传列表中选择</n-button>
         <div class="sources__box">
           <div>1</div>
@@ -41,20 +41,16 @@
 </template>
 
 <script setup>
-  // window.$ipcRenderer.send('open-file-dialog')
-  // window.$aaa.do()
-  window.$electron.send()
-
-const handleClick = e=>{
- console.log('本地上传')
+const handleClick = (e) => {
+  window.ipcRenderer.send('open-file-dialog')
 }
 </script>
 
 <style lang='scss' scoped>
 .tips {
-  font-size: .11rem;
+  font-size: 0.11rem;
   color: #b4b4b4;
-  padding: .03rem .03rem .03rem .1rem;
+  padding: 0.03rem 0.03rem 0.03rem 0.1rem;
 }
 .datasetmanager {
   color: #ffffff;
@@ -76,7 +72,6 @@ const handleClick = e=>{
           flex: 1;
           color: #b1b2b5;
           font-weight: 600;
-          font-size: .15rem;
         }
         .btn {
           height: 0.2rem;
@@ -97,12 +92,12 @@ const handleClick = e=>{
   &__content {
     flex: 1;
     background-color: #202020;
-    &__box{
-      padding-left: .10rem;
+    &__box {
+      padding-left: 0.1rem;
       // height: 100%;
-      .btn{
-        height: .2rem;
-        margin-right: .07rem;
+      .btn {
+        height: 0.2rem;
+        margin-right: 0.07rem;
       }
     }
   }
