@@ -1,12 +1,13 @@
 import { createStore } from 'vuex'
 
+
 export default createStore({
   state: {
     user: {
       username: '张四四'
     },
     meuns: [{
-      "icon": "&#xe6c2;",
+      "icon": "<Keypad/>",
       "title": "数据展示",
       "desc": "用于对数据集进行数据展示",
       "path": "/dataset",

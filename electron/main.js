@@ -1,6 +1,7 @@
 const {app,BrowserWindow,ipcMain,dialog } = require('electron')
 const path = require('path')
 const NODE_ENV = process.env.NODE_ENV
+console.log('NODE_ENV',NODE_ENV)
 function createWindow(){
   const mainWindow = new BrowserWindow({
     witdh:800,
@@ -12,7 +13,7 @@ function createWindow(){
       preload:path.join(__dirname,'preload.js')
     }
   })
-  // mainWindow.loadFile('dist/index.html')
+  // mainWindow.loadURL('http://localhost:3000')
   mainWindow.loadURL(
     NODE_ENV === 'development'
       ? 'http://localhost:3000'

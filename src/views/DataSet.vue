@@ -17,7 +17,7 @@
     </div>
           <div class='dataset__list__source'>
         <div class='dataset__list__dataset__title'>
-          需求列表
+          可视化列表
         </div>
         <div class='dataset__list__dataset__listing'>
           <div class='dataset__list__dataset__listing__item' @click='router.push("/dataset/xq1")'>
